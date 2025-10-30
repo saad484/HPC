@@ -33,7 +33,14 @@ int main(int argc, char** argv) {
     // } 
   
     // MPI_Finalize(); // Finalize the MPI environment
+
     
+    //what will happen if we omit the Finalize()?
+    // If we omit the MPI_Finalize() function call in an MPI program, it can lead to several issues:
+    // Resource Leaks: MPI_Finalize() is responsible for cleaning up and releasing resources allocated by the MPI environment.
+    // Omitting this call can result in resource leaks, such as memory leaks or open file descriptors, which can degrade system performance over time.
+    // Incomplete Communication: MPI_Finalize() ensures that all pending communications are completed before the program exits.
+    // If we omit this call, there is a risk that some messages may not be sent or received properly, leading to inconsistent program behavior.
     
     return 0;
 }
